@@ -1,0 +1,77 @@
+/* --- General Page Styling --- */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* --- Game Layout --- */
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- Shuffled Pieces Area --- */
+.pieces-area {
+  width: 320px;
+  min-height: 320px;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: white;
+}
+
+/* --- Puzzle Board Area --- */
+.board-area {
+  width: 320px;
+  height: 320px;
+  border: 2px solid #333;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+  grid-template-rows: repeat(2, 1fr);     /* 2 rows */
+  gap: 5px;
+  background: white;
+  padding: 10px;
+}
+
+/* --- Puzzle Pieces --- */
+.piece {
+  width: 100px;
+  height: 100px;
+  background-size: 300px 200px;  /* same as full image split into 3x2 */
+  background-image: url("https://images.pexels.com/photos/235725/pexels-photo-235725.jpeg");
+  border: 1px solid #555;
+  cursor: grab;
+}
+
+.piece:active {
+  cursor: grabbing;
+}
+
+/* --- Reset Button --- */
+.reset-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background: #f44336;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #d32f2f;
+}
