@@ -1,4 +1,4 @@
-/* --- General Page Styling --- */
+/* General Page Styling */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -13,7 +13,7 @@ body {
   font-weight: bold;
 }
 
-/* --- Game Layout --- */
+/* Game Layout */
 .game-container {
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* --- Shuffled Pieces Area --- */
+/*Shuffled Pieces Area */
 .pieces-area {
   width: 320px;
   min-height: 320px;
@@ -33,24 +33,29 @@ body {
   background: white;
 }
 
-/* --- Puzzle Board Area --- */
+/* Puzzle Board Area */
 .board-area {
   width: 320px;
   height: 320px;
   border: 2px solid #333;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
-  grid-template-rows: repeat(2, 1fr);     /* 2 rows */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 5px;
   background: white;
   padding: 10px;
 }
 
-/* --- Puzzle Pieces --- */
+/* Board Slot */
+.board-area .board-slot {
+  border: 1px dashed #ccc;
+}
+
+/* Puzzle Pieces */
 .piece {
   width: 100px;
   height: 100px;
-  background-size: 300px 200px;  /* same as full image split into 3x2 */
+  background-size: 300px 200px;
   background-image: url("https://images.pexels.com/photos/235725/pexels-photo-235725.jpeg");
   border: 1px solid #555;
   cursor: grab;
@@ -60,7 +65,40 @@ body {
   cursor: grabbing;
 }
 
-/* --- Reset Button --- */
+/* Placement Feedback */
+.piece.correct {
+  border: 2px solid #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+  cursor: default;
+}
+
+/* Slot Highlight */
+.board-area .correct-slot {
+    background: #e8f5e9;
+}
+
+/* Game Message */
+#game-message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Media Queries*/
+@media (max-width: 768px) {
+    /* Stack the game areas vertically on smaller screens */
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Increase gap for better separation */
+    }
+    body {
+        padding: 10px;
+    }
+}
+
+/* Reset Button  */
 .reset-btn {
   margin-top: 20px;
   padding: 10px 20px;
